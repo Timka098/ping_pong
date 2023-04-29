@@ -1,5 +1,6 @@
 import pygame, os
-from sprite import Wall
+from sprite import Wall, Ball
+
 pygame.init()
 
 #creat window and setings
@@ -7,7 +8,10 @@ pygame.init()
 win = pygame.display.set_mode((800, 600))
 pygame.display.set_caption('ping pong')
 
-wall1 = Wall(win)
+wall1 = Wall(win, 10)
+wall2 = Wall(win, 770)
+
+ball = Ball(win)
 #FPS
 
 fps = pygame.time.Clock()
@@ -23,3 +27,6 @@ while True:
             exit()
     
     wall1.show()
+    wall1.move()
+    wall2.show()
+    ball.show()
